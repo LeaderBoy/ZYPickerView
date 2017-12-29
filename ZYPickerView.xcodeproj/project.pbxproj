@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		52B825981FF6274500AEA830 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B825971FF6274500AEA830 /* AppDelegate.swift */; };
+		52B8259A1FF6274500AEA830 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B825991FF6274500AEA830 /* ViewController.swift */; };
+		52B8259D1FF6274500AEA830 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B8259B1FF6274500AEA830 /* Main.storyboard */; };
+		52B8259F1FF6274500AEA830 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52B8259E1FF6274500AEA830 /* Assets.xcassets */; };
+		52B825A21FF6274600AEA830 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B825A01FF6274600AEA830 /* LaunchScreen.storyboard */; };
+		52B825AD1FF6274600AEA830 /* ZYPickerViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B825AC1FF6274600AEA830 /* ZYPickerViewTests.swift */; };
+		52B825B81FF6274600AEA830 /* ZYPickerViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B825B71FF6274600AEA830 /* ZYPickerViewUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		52B825A91FF6274600AEA830 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52B8258C1FF6274500AEA830 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52B825931FF6274500AEA830;
+			remoteInfo = ZYPickerView;
+		};
+		52B825B41FF6274600AEA830 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52B8258C1FF6274500AEA830 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52B825931FF6274500AEA830;
+			remoteInfo = ZYPickerView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		52B825941FF6274500AEA830 /* ZYPickerView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZYPickerView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		52B825971FF6274500AEA830 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		52B825991FF6274500AEA830 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		52B8259C1FF6274500AEA830 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		52B8259E1FF6274500AEA830 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		52B825A11FF6274600AEA830 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		52B825A31FF6274600AEA830 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52B825A81FF6274600AEA830 /* ZYPickerViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZYPickerViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		52B825AC1FF6274600AEA830 /* ZYPickerViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYPickerViewTests.swift; sourceTree = "<group>"; };
+		52B825AE1FF6274600AEA830 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52B825B31FF6274600AEA830 /* ZYPickerViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZYPickerViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		52B825B71FF6274600AEA830 /* ZYPickerViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYPickerViewUITests.swift; sourceTree = "<group>"; };
+		52B825B91FF6274600AEA830 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		52B825911FF6274500AEA830 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52B825A51FF6274600AEA830 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52B825B01FF6274600AEA830 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		52B8258B1FF6274500AEA830 = {
+			isa = PBXGroup;
+			children = (
+				52B825961FF6274500AEA830 /* ZYPickerView */,
+				52B825AB1FF6274600AEA830 /* ZYPickerViewTests */,
+				52B825B61FF6274600AEA830 /* ZYPickerViewUITests */,
+				52B825951FF6274500AEA830 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		52B825951FF6274500AEA830 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52B825941FF6274500AEA830 /* ZYPickerView.app */,
+				52B825A81FF6274600AEA830 /* ZYPickerViewTests.xctest */,
+				52B825B31FF6274600AEA830 /* ZYPickerViewUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		52B825961FF6274500AEA830 /* ZYPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				52B825971FF6274500AEA830 /* AppDelegate.swift */,
+				52B825991FF6274500AEA830 /* ViewController.swift */,
+				52B8259B1FF6274500AEA830 /* Main.storyboard */,
+				52B8259E1FF6274500AEA830 /* Assets.xcassets */,
+				52B825A01FF6274600AEA830 /* LaunchScreen.storyboard */,
+				52B825A31FF6274600AEA830 /* Info.plist */,
+			);
+			path = ZYPickerView;
+			sourceTree = "<group>";
+		};
+		52B825AB1FF6274600AEA830 /* ZYPickerViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				52B825AC1FF6274600AEA830 /* ZYPickerViewTests.swift */,
+				52B825AE1FF6274600AEA830 /* Info.plist */,
+			);
+			path = ZYPickerViewTests;
+			sourceTree = "<group>";
+		};
+		52B825B61FF6274600AEA830 /* ZYPickerViewUITests */ = {
+			isa = PBXGroup;
+			children = (
+				52B825B71FF6274600AEA830 /* ZYPickerViewUITests.swift */,
+				52B825B91FF6274600AEA830 /* Info.plist */,
+			);
+			path = ZYPickerViewUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		52B825931FF6274500AEA830 /* ZYPickerView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52B825BC1FF6274600AEA830 /* Build configuration list for PBXNativeTarget "ZYPickerView" */;
+			buildPhases = (
+				52B825901FF6274500AEA830 /* Sources */,
+				52B825911FF6274500AEA830 /* Frameworks */,
+				52B825921FF6274500AEA830 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZYPickerView;
+			productName = ZYPickerView;
+			productReference = 52B825941FF6274500AEA830 /* ZYPickerView.app */;
+			productType = "com.apple.product-type.application";
+		};
+		52B825A71FF6274600AEA830 /* ZYPickerViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52B825BF1FF6274600AEA830 /* Build configuration list for PBXNativeTarget "ZYPickerViewTests" */;
+			buildPhases = (
+				52B825A41FF6274600AEA830 /* Sources */,
+				52B825A51FF6274600AEA830 /* Frameworks */,
+				52B825A61FF6274600AEA830 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				52B825AA1FF6274600AEA830 /* PBXTargetDependency */,
+			);
+			name = ZYPickerViewTests;
+			productName = ZYPickerViewTests;
+			productReference = 52B825A81FF6274600AEA830 /* ZYPickerViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		52B825B21FF6274600AEA830 /* ZYPickerViewUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52B825C21FF6274600AEA830 /* Build configuration list for PBXNativeTarget "ZYPickerViewUITests" */;
+			buildPhases = (
+				52B825AF1FF6274600AEA830 /* Sources */,
+				52B825B01FF6274600AEA830 /* Frameworks */,
+				52B825B11FF6274600AEA830 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				52B825B51FF6274600AEA830 /* PBXTargetDependency */,
+			);
+			name = ZYPickerViewUITests;
+			productName = ZYPickerViewUITests;
+			productReference = 52B825B31FF6274600AEA830 /* ZYPickerViewUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		52B8258C1FF6274500AEA830 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = BaQiWL;
+				TargetAttributes = {
+					52B825931FF6274500AEA830 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					52B825A71FF6274600AEA830 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 52B825931FF6274500AEA830;
+					};
+					52B825B21FF6274600AEA830 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 52B825931FF6274500AEA830;
+					};
+				};
+			};
+			buildConfigurationList = 52B8258F1FF6274500AEA830 /* Build configuration list for PBXProject "ZYPickerView" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 52B8258B1FF6274500AEA830;
+			productRefGroup = 52B825951FF6274500AEA830 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				52B825931FF6274500AEA830 /* ZYPickerView */,
+				52B825A71FF6274600AEA830 /* ZYPickerViewTests */,
+				52B825B21FF6274600AEA830 /* ZYPickerViewUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		52B825921FF6274500AEA830 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52B825A21FF6274600AEA830 /* LaunchScreen.storyboard in Resources */,
+				52B8259F1FF6274500AEA830 /* Assets.xcassets in Resources */,
+				52B8259D1FF6274500AEA830 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52B825A61FF6274600AEA830 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52B825B11FF6274600AEA830 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		52B825901FF6274500AEA830 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52B8259A1FF6274500AEA830 /* ViewController.swift in Sources */,
+				52B825981FF6274500AEA830 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52B825A41FF6274600AEA830 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52B825AD1FF6274600AEA830 /* ZYPickerViewTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52B825AF1FF6274600AEA830 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52B825B81FF6274600AEA830 /* ZYPickerViewUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		52B825AA1FF6274600AEA830 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52B825931FF6274500AEA830 /* ZYPickerView */;
+			targetProxy = 52B825A91FF6274600AEA830 /* PBXContainerItemProxy */;
+		};
+		52B825B51FF6274600AEA830 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52B825931FF6274500AEA830 /* ZYPickerView */;
+			targetProxy = 52B825B41FF6274600AEA830 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		52B8259B1FF6274500AEA830 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52B8259C1FF6274500AEA830 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		52B825A01FF6274600AEA830 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52B825A11FF6274600AEA830 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		52B825BA1FF6274600AEA830 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		52B825BB1FF6274600AEA830 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		52B825BD1FF6274600AEA830 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2X35A5C84A;
+				INFOPLIST_FILE = ZYPickerView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.YZY.ZYPickerView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		52B825BE1FF6274600AEA830 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2X35A5C84A;
+				INFOPLIST_FILE = ZYPickerView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.YZY.ZYPickerView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		52B825C01FF6274600AEA830 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2X35A5C84A;
+				INFOPLIST_FILE = ZYPickerViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.YZY.ZYPickerViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZYPickerView.app/ZYPickerView";
+			};
+			name = Debug;
+		};
+		52B825C11FF6274600AEA830 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2X35A5C84A;
+				INFOPLIST_FILE = ZYPickerViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.YZY.ZYPickerViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZYPickerView.app/ZYPickerView";
+			};
+			name = Release;
+		};
+		52B825C31FF6274600AEA830 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2X35A5C84A;
+				INFOPLIST_FILE = ZYPickerViewUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.YZY.ZYPickerViewUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ZYPickerView;
+			};
+			name = Debug;
+		};
+		52B825C41FF6274600AEA830 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2X35A5C84A;
+				INFOPLIST_FILE = ZYPickerViewUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.YZY.ZYPickerViewUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ZYPickerView;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		52B8258F1FF6274500AEA830 /* Build configuration list for PBXProject "ZYPickerView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52B825BA1FF6274600AEA830 /* Debug */,
+				52B825BB1FF6274600AEA830 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52B825BC1FF6274600AEA830 /* Build configuration list for PBXNativeTarget "ZYPickerView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52B825BD1FF6274600AEA830 /* Debug */,
+				52B825BE1FF6274600AEA830 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52B825BF1FF6274600AEA830 /* Build configuration list for PBXNativeTarget "ZYPickerViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52B825C01FF6274600AEA830 /* Debug */,
+				52B825C11FF6274600AEA830 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52B825C21FF6274600AEA830 /* Build configuration list for PBXNativeTarget "ZYPickerViewUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52B825C31FF6274600AEA830 /* Debug */,
+				52B825C41FF6274600AEA830 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 52B8258C1FF6274500AEA830 /* Project object */;
+}
