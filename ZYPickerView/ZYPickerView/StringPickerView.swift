@@ -212,7 +212,6 @@ extension StringPickerView : UIPickerViewDataSource,UIPickerViewDelegate {
                 guard let value = values else {
                     return 0
                 }
-                print(value)
                 return value.count
             }
             
@@ -236,8 +235,7 @@ extension StringPickerView : UIPickerViewDataSource,UIPickerViewDelegate {
             }
         }else if isAssociatedRowData{
             //TODO:关联数据
-            print(selectedValue[component].value)
-            return "1"
+            return titleFor(row, in: component) ?? ""
         }
         return nil
     }
@@ -252,13 +250,34 @@ extension StringPickerView : UIPickerViewDataSource,UIPickerViewDelegate {
             selectedValue[component].value = multiRowData[component][row]
         }else if isAssociatedRowData {
             //TODO:关联的数据类型
-            selectedValue[component].value = "1"
+            selectedValue[component].value = titleFor(row, in: component) ?? ""
             if component < 1 {
                 self.picker.reloadComponent(1)
                 self.picker.selectRow(0, inComponent: component + 1, animated: true)
             }
         }
         
+    }
+    
+    func titleFor(_ row : Int,in component:Int) -> String? {
+        
+        let r = component == 0 ? row : selectedValue[component-1].row
+        
+        guard let key = associatedRowData[r].keys.first else {
+            return nil
+        }
+        if component == 0 {
+            return key
+        }else if component == 1 {
+            guard let values = associatedRowData[r][key] else {
+                return nil
+            }
+            if values != nil && values!.count > row {
+                return values![row]
+            }
+            return nil
+        }
+        return nil
     }
     
 }
