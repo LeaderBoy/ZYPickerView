@@ -28,9 +28,34 @@ class ZYPickerViewUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testSingleDataWithoutDefaultIndex() {
+        let app = XCUIApplication()
+        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.tap()
+        app/*@START_MENU_TOKEN@*/.pickerWheels["7"]/*[[".pickers.pickerWheels[\"7\"]",".pickerWheels[\"7\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.swipeUp()
+        app.toolbars.buttons["完成"].tap()
+    }
+    
+    func testSingleDataWithDefaultIndex() {
+        let app = XCUIApplication()
+        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.tap()
+        app/*@START_MENU_TOKEN@*/.pickerWheels["9"].press(forDuration: 0.5);/*[[".pickers.pickerWheels[\"9\"]",".tap()",".press(forDuration: 0.5);",".pickerWheels[\"9\"]"],[[[-1,3,1],[-1,0,1]],[[-1,2],[-1,1]]],[0,0]]@END_MENU_TOKEN@*/
+        app.toolbars.buttons["完成"].tap()
+    }
+    
+    func testMultiDataWithoutDefaultIndex() {
+        let app = XCUIApplication()
+        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.tap()
+        app/*@START_MENU_TOKEN@*/.pickerWheels["7"]/*[[".pickers.pickerWheels[\"7\"]",".pickerWheels[\"7\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.swipeUp()
+        app/*@START_MENU_TOKEN@*/.pickerWheels["4"]/*[[".pickers.pickerWheels[\"4\"]",".pickerWheels[\"4\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app/*@START_MENU_TOKEN@*/.pickerWheels["1"]/*[[".pickers.pickerWheels[\"1\"]",".pickerWheels[\"1\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.swipeUp()
+        app.toolbars.buttons["完成"].tap()
+    }
+    
+    func testMultiDataWithDefaultIndex() {
+        let app = XCUIApplication()
+        app.children(matching: .window).element(boundBy: 0).children(matching: .other).element.tap()
+        app/*@START_MENU_TOKEN@*/.pickerWheels["1"]/*[[".pickers.pickerWheels[\"1\"]",".pickerWheels[\"1\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.swipeUp()
+        app.toolbars.buttons["完成"].tap()
     }
     
 }
