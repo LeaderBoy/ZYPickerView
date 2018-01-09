@@ -47,7 +47,7 @@ class ViewController: UIViewController {
         
         let a = ["a":["1":["q","w","er"],"2":["q","w","er"],"3":["q","w","er"]]]
         let b = ["a":["1":["q","w","er"],"2":["q","w","er"],"3":["q","w","er"]]]
- StringPickerView.show(dataSource: .associatedRowData(languageData as! StringPickerView.AssociatedRowDataType, defaultIndexs: nil)) { (indexPath) in
+ StringPickerView.show(dataSource: .associatedRowData(languageData as! StringPickerView.AssociatedRowDataType, defaultIndexs: [2,2])) { (indexPath) in
             print(indexPath)
         }
     }
