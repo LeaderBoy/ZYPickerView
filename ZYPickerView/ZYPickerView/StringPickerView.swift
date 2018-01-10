@@ -56,9 +56,11 @@ class StringPickerView: ZYPickerView {
     var associatedRowData : AssociatedRowDataType! {
         didSet {
             isAssociatedRowData = true
+            associatedRowDataCount = associatedRowData.count
             self.picker.reloadAllComponents()
         }
     }
+    var associatedRowDataCount : Int!
     
     var selectedValue : [PickerIndexPath] = [PickerIndexPath(component: 0,row: 0, value: "")]
     
@@ -133,7 +135,7 @@ class StringPickerView: ZYPickerView {
         assert(!associatedRowData.isEmpty, "数组为空")
         let hasDefaultIndex : Bool = index != nil
         if hasDefaultIndex {
-            assert(associatedRowData.count == index!.count,"默认的indexs与associatedRowData数组的总个数不一致")
+            assert(associatedRowDataCount == index!.count,"默认的indexs与associatedRowData数组的总个数不一致")
         }
         self.associatedRowData = associatedRowData
         self.doneAction = doneAction
@@ -187,7 +189,7 @@ extension StringPickerView : UIPickerViewDataSource,UIPickerViewDelegate {
         }else if isMultiRowData {
             return multiRowData.count
         }else if isAssociatedRowData{
-            return associatedRowData.count
+            return associatedRowDataCount
         }
         return 0
     }
@@ -243,35 +245,31 @@ extension StringPickerView : UIPickerViewDataSource,UIPickerViewDelegate {
         }else if isMultiRowData{
             selectedValue[component].value = multiRowData[component][row]
         }else if isAssociatedRowData {
-            selectedValue[component].value = currentTitleFor(row, in: component) ?? ""
-            refreshLaterFor(row,in : component)
+            selectedValue[component].value = currentTitleFor(row, in: component) ?? "current"
+            if component < associatedRowDataCount - 1 {
+                refreshLaterFor(row,in : component)
+            }
         }
     }
     
     func refreshLaterFor(_ row :Int, in component : Int) {
-        for i in ((component+1)..<associatedRowData.count) {
+        for i in ((component+1)..<associatedRowDataCount) {
             let preKey = previousKeyFor(row, in: i)
             let valueArray = fetchValueArray(use: preKey, for: i)
             if valueArray != nil  && valueArray!.count > 0 {
                 self.selectedValue[i].value = valueArray![0]
             }else{
-                self.selectedValue[i].value = ""
+                self.selectedValue[i].value = "refres"
             }
             self.selectedValue[i].row = 0
             self.selectedValue[i].component = i
+            reloadPicker(in: i)
         }
-        reloadPicker(in: component)
     }
     
     func reloadPicker(in component : Int) {
-        if component < associatedRowData.count - 1 {
-            var com = component
-            repeat {
-                com = com + 1
-                self.picker.selectRow(0, inComponent: com, animated: true)
-                self.picker.reloadComponent(com)
-            }while com < associatedRowData.count - 1
-        }
+        self.picker.reloadComponent(component)
+        self.picker.selectRow(0, inComponent: component, animated: true)
     }
     
     func previousKeyFor(_ row : Int ,in component : Int) -> String? {
@@ -283,7 +281,7 @@ extension StringPickerView : UIPickerViewDataSource,UIPickerViewDelegate {
     }
     
     func currentTitleFor(_ row : Int,in component : Int) -> String? {
-        assert(associatedRowData.count > component, "component应小于associatedRowData的个数")
+        assert(associatedRowDataCount > component, "component应小于associatedRowData的个数")
         let preKey = previousKeyFor(row, in: component)
         if component == 0 {
             return preKey
