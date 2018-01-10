@@ -243,46 +243,34 @@ extension StringPickerView : UIPickerViewDataSource,UIPickerViewDelegate {
         }else if isMultiRowData{
             selectedValue[component].value = multiRowData[component][row]
         }else if isAssociatedRowData {
-            if component == 0 {
-                firstKey = associatedRowData[component][row].key
-                selectedValue[component].value = firstKey
+            selectedValue[component].value = currentTitleFor(row, in: component) ?? ""
+            refreshLaterFor(row,in : component)
+        }
+    }
+    
+    func refreshLaterFor(_ row :Int, in component : Int) {
+        for i in ((component+1)..<associatedRowData.count) {
+            let preKey = previousKeyFor(row, in: i)
+            let valueArray = fetchValueArray(use: preKey, for: i)
+            if valueArray != nil  && valueArray!.count > 0 {
+                self.selectedValue[i].value = valueArray![0]
             }else{
-                let preKey = selectedValue[component-1].value
-                let array = associatedRowData[component]
-                guard let rowData = array.first(where: { $0.key == preKey}) else {
-                    return
-                }
-                if rowData.valueArray != nil  && rowData.valueArray!.count > row {
-                    self.selectedValue[component].row = row
-                    self.selectedValue[component].component = component
-                    self.selectedValue[component].value = rowData.valueArray![row]
-                }else{
-                    return
-                }
+                self.selectedValue[i].value = ""
             }
-            for i in ((component+1)..<associatedRowData.count) {
-                let array = associatedRowData[i]
-                let key = self.selectedValue[i-1].value
-                guard let rowData = array.first(where: { $0.key == key}) else {
-                    break
-                }
-                if rowData.valueArray != nil  && rowData.valueArray!.count > 0 {
-                    self.selectedValue[i].row = 0
-                    self.selectedValue[i].component = i
-                    self.selectedValue[i].value = rowData.valueArray![0]
-                }else{
-                    break
-                }
-            }
-            
-            if component < associatedRowData.count - 1 {
-                var com = component
-                repeat {
-                    com = com + 1
-                    self.picker.selectRow(0, inComponent: com, animated: true)
-                    self.picker.reloadComponent(com)
-                }while com < associatedRowData.count - 1
-            }
+            self.selectedValue[i].row = 0
+            self.selectedValue[i].component = i
+        }
+        reloadPicker(in: component)
+    }
+    
+    func reloadPicker(in component : Int) {
+        if component < associatedRowData.count - 1 {
+            var com = component
+            repeat {
+                com = com + 1
+                self.picker.selectRow(0, inComponent: com, animated: true)
+                self.picker.reloadComponent(com)
+            }while com < associatedRowData.count - 1
         }
     }
     
@@ -297,20 +285,28 @@ extension StringPickerView : UIPickerViewDataSource,UIPickerViewDelegate {
     func currentTitleFor(_ row : Int,in component : Int) -> String? {
         assert(associatedRowData.count > component, "component应小于associatedRowData的个数")
         let preKey = previousKeyFor(row, in: component)
-
         if component == 0 {
             return preKey
         }
-        
+        let valueArray = fetchValueArray(use: preKey, for: component)
+        if valueArray != nil  && valueArray!.count > row {
+            return valueArray![row]
+        }else{
+            return nil
+        }
+    }
+    
+    func fetchRowData(use preKey : String?,for component : Int) -> AssociatedData? {
         let array = associatedRowData[component]
         guard let rowData = array.first(where: { $0.key == preKey}) else {
             return nil
         }
-        if rowData.valueArray != nil  && rowData.valueArray!.count > row {
-            return rowData.valueArray![row]
-        }else{
-            return nil
-        }
+        return rowData
+    }
+    
+    func fetchValueArray(use preKey : String?,for component : Int) -> [String]? {
+        guard let rowData = fetchRowData(use: preKey, for: component) else { return nil }
+        return rowData.valueArray
     }
     
 }
