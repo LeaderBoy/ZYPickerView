@@ -68,9 +68,15 @@ class ViewController: UIViewController {
             [    AssociatedData(key: "交通工具", valueArray: ["陆地", "空中", "水上"]),
                  AssociatedData(key: "食品", valueArray: ["健康食品", "垃圾食品"]),
                  AssociatedData(key: "游戏", valueArray: ["益智游戏", "角色游戏"]),
-            ]
-            
-            
+            ],
+            [   AssociatedData(key: "陆地", valueArray: ["公交车", "小轿车", "自行车","火车"]),
+                AssociatedData(key: "空中", valueArray: ["飞机"]),
+                AssociatedData(key: "水上", valueArray: ["轮船"]),
+                AssociatedData(key: "健康食品", valueArray: ["蔬菜", "水果"]),
+                AssociatedData(key: "垃圾食品", valueArray: ["辣条", "不健康小吃"]),
+                AssociatedData(key: "益智游戏", valueArray: ["消消乐", "消灭星星"]),
+                AssociatedData(key: "角色游戏", valueArray: ["lol", "cf"])
+            ]            
         ]
  StringPickerView.show(dataSource: .associatedRowData(associatedData, defaultIndexs: nil)) { (indexPath) in
             print(indexPath)

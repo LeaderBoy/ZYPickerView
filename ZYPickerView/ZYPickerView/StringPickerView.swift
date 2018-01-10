@@ -294,19 +294,16 @@ extension StringPickerView : UIPickerViewDataSource,UIPickerViewDelegate {
             key = associatedRowData[0][row].key
             return key
         }else{
-            for i in (1...component) {
-                let array = associatedRowData[i]
-                guard let rowData = array.first(where: { $0.key == key}) else {
-                    break
-                }
-                if rowData.valueArray != nil  && rowData.valueArray!.count > row {
-                    key = rowData.valueArray![row]
-                }else{
-                    key = "www"
-                    break
-                }
+            let preKey = self.selectedValue[component-1].value
+            let array = associatedRowData[component]
+            guard let rowData = array.first(where: { $0.key == preKey}) else {
+                return "111"
             }
-            return key
+            if rowData.valueArray != nil  && rowData.valueArray!.count > row {
+                return rowData.valueArray![row]
+            }else{
+                return "222"
+            }
         }
     }
     
