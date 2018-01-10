@@ -40,14 +40,39 @@ class ViewController: UIViewController {
 //        DatePickerView.show(mode: .time, minDate: minDate, maxDate: maxDate) { (date) in
 //            print(date)
 //        }
-        
+        /*
+         ,
+         // 第三列数据 (valueArray)
+         [   AssociatedData(key: "陆地", valueArray: ["公交车", "小轿车", "自行车","火车"]),
+         AssociatedData(key: "空中", valueArray: ["飞机"]),
+         AssociatedData(key: "水上", valueArray: ["轮船"]),
+         AssociatedData(key: "健康食品", valueArray: ["蔬菜", "水果"]),
+         AssociatedData(key: "垃圾食品", valueArray: ["辣条", "不健康小吃"]),
+         AssociatedData(key: "益智游戏", valueArray: ["消消乐", "消灭星星"]),
+         AssociatedData(key: "角色游戏", valueArray: ["lol", "cf"])
+         ]
+         
+         */
         
         let path = Bundle.main.path(forResource: "Language", ofType: "plist")
         let languageData = NSArray(contentsOfFile: path!)
         
-        let a = ["a":["1":["q","w","er"],"2":["q","w","er"],"3":["q","w","er"]]]
-        let b = ["a":["1":["q","w","er"],"2":["q","w","er"],"3":["q","w","er"]]]
- StringPickerView.show(dataSource: .associatedRowData(languageData as! StringPickerView.AssociatedRowDataType, defaultIndexs: [2,2])) { (indexPath) in
+        
+        let associatedData: [[AssociatedData]] = [
+            // 第一列数据 (key)
+            [   AssociatedData(key: "交通工具"),
+                AssociatedData(key: "食品"),
+                AssociatedData(key: "游戏")
+            ],
+            // 第二列数据 (valueArray)
+            [    AssociatedData(key: "交通工具", valueArray: ["陆地", "空中", "水上"]),
+                 AssociatedData(key: "食品", valueArray: ["健康食品", "垃圾食品"]),
+                 AssociatedData(key: "游戏", valueArray: ["益智游戏", "角色游戏"]),
+            ]
+            
+            
+        ]
+ StringPickerView.show(dataSource: .associatedRowData(associatedData, defaultIndexs: nil)) { (indexPath) in
             print(indexPath)
         }
     }
