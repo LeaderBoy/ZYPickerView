@@ -229,7 +229,7 @@ extension StringPickerView : UIPickerViewDataSource,UIPickerViewDelegate {
                 return nil
             }
         }else if isAssociatedRowData{
-            return titleFor(row, in: component)
+            return currentTitleFor(row, in: component)
         }
         return nil
     }
@@ -281,29 +281,35 @@ extension StringPickerView : UIPickerViewDataSource,UIPickerViewDelegate {
                     com = com + 1
                     self.picker.selectRow(0, inComponent: com, animated: true)
                     self.picker.reloadComponent(com)
-                    
                 }while com < associatedRowData.count - 1
             }
         }
     }
     
-    fileprivate func titleFor(_ row : Int,in component:Int) -> String {
-        // 第一组 选择的值
-        var key = firstKey
+    func previousKeyFor(_ row : Int ,in component : Int) -> String? {
         if component == 0 {
-            key = associatedRowData[0][row].key
-            return key
+            assert(associatedRowData[0].count > row, "row超出了associatedRowData[0]的个数")
+            return associatedRowData[component][row].key
+        }
+        return selectedValue[component-1].value
+    }
+    
+    func currentTitleFor(_ row : Int,in component : Int) -> String? {
+        assert(associatedRowData.count > component, "component应小于associatedRowData的个数")
+        let preKey = previousKeyFor(row, in: component)
+
+        if component == 0 {
+            return preKey
+        }
+        
+        let array = associatedRowData[component]
+        guard let rowData = array.first(where: { $0.key == preKey}) else {
+            return nil
+        }
+        if rowData.valueArray != nil  && rowData.valueArray!.count > row {
+            return rowData.valueArray![row]
         }else{
-            let preKey = self.selectedValue[component-1].value
-            let array = associatedRowData[component]
-            guard let rowData = array.first(where: { $0.key == preKey}) else {
-                return "111"
-            }
-            if rowData.valueArray != nil  && rowData.valueArray!.count > row {
-                return rowData.valueArray![row]
-            }else{
-                return "222"
-            }
+            return nil
         }
     }
     
