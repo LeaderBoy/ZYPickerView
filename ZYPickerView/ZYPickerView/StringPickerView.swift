@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// 关联的数据类型
 struct AssociatedData {
     var key: String
     var valueArray: [String]?
@@ -15,14 +16,9 @@ struct AssociatedData {
         self.key = key
         self.valueArray = valueArray
     }
-    
-    func valueArrayFor(key : String) -> [String]? {
-        return self.valueArray
-    }
 }
 
 class StringPickerView: ZYPickerView {
-//    typealias AssociatedRowDataType = [[String: [String]?]]
     typealias AssociatedRowDataType = [[AssociatedData]]
 
     enum PickerDataSourceType {
@@ -35,11 +31,6 @@ class StringPickerView: ZYPickerView {
     lazy var isMultiRowData  = false
     lazy var isAssociatedRowData = false
     
-    var firstKey = ""
-
-//    lazy var isAssociatedTwoRowData = false
-//    lazy var isAssociatedThreeRowData = false
-
     var singleRowData   : [String]! {
         didSet {
             isSingleRowData = true
@@ -152,12 +143,11 @@ class StringPickerView: ZYPickerView {
             })
             :
             associatedRowData.enumerated().map({ (arg) -> PickerIndexPath in
-                let (component, valueArray) = arg
+                let (component, rowData) = arg
                 if component == 0 {
-                    key = valueArray[0].key
-                    firstKey = key
+                    key = rowData[0].key
                 }else{
-                    guard let values = valueArray.first(where: {$0.key == key}) else{
+                    guard let values = rowData.first(where: {$0.key == key}) else{
                         return PickerIndexPath(component: component, row: 0, value: "")
                     }
                     if values.valueArray != nil && values.valueArray!.count >= 1 {
