@@ -48,10 +48,10 @@ class StringPickerView: ZYPickerView {
         didSet {
             isAssociatedRowData = true
             associatedRowDataCount = associatedRowData.count
-            
+            var key = ""
             self.selectedValue = associatedRowData.enumerated().map({ (arg) -> PickerIndexPath in
                 let (component, rowData) = arg
-                var key = ""
+                
                 if component == 0 {
                     key = rowData[0].key
                 }else{
