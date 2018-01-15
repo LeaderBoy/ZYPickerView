@@ -71,7 +71,6 @@ class StringPickerView: ZYPickerView {
         }
     }
     var associatedRowDataCount : Int!
-    var selectedValue : [PickerIndexPath]!
     
     fileprivate lazy var picker : UIPickerView = {
         let picker = UIPickerView()
@@ -165,9 +164,6 @@ class StringPickerView: ZYPickerView {
                 return PickerIndexPath(component: component, row: row, value: title ?? "")
             })
         }
-            
-        print(self.selectedValue)
-        print("dww")
         
     }
     //MARK:完成按钮点击事件
@@ -176,6 +172,66 @@ class StringPickerView: ZYPickerView {
         if doneAction != nil {
             doneAction!(selectedValue)            
         }
+    }
+    
+    func refreshLaterFor(_ row :Int, in component : Int) {
+        for com in ((component+1)..<associatedRowDataCount) {
+            let preKey = previousKeyFor(row, in: com)
+            let valueArray = fetchValueArray(use: preKey, for: com)
+            if valueArray != nil  && valueArray!.count > 0 {
+                self.selectedValue[com].value = valueArray![0]
+            }else{
+                self.selectedValue[com].value = ""
+            }
+            self.selectedValue[com].row = 0
+            self.selectedValue[com].component = com
+            reloadPicker(in: com)
+        }
+    }
+    
+    
+    func reloadPicker(_ row: Int? = nil,in component: Int) {
+        self.picker.reloadComponent(component)
+        self.picker.selectRow(row ?? 0, inComponent: component, animated: true)
+    }
+    
+    func previousKeyFor(_ row : Int ,in component : Int) -> String? {
+        if component == 0 {
+            assert(associatedRowData[0].count > row, "row超出了associatedRowData[0]的个数")
+            return associatedRowData[component][row].key
+        }
+        if selectedValue.count > component-1 {
+            return selectedValue[component-1].value
+        }else{
+            return nil
+        }
+    }
+    
+    func currentTitleFor(_ row : Int,in component : Int) -> String? {
+        assert(associatedRowDataCount > component, "component应小于associatedRowData的个数")
+        let preKey = previousKeyFor(row, in: component)
+        if component == 0 {
+            return preKey
+        }
+        let valueArray = fetchValueArray(use: preKey, for: component)
+        if valueArray != nil  && valueArray!.count > row {
+            return valueArray![row]
+        }else{
+            return nil
+        }
+    }
+    
+    func fetchRowData(use preKey : String?,for component : Int) -> AssociatedData? {
+        let array = associatedRowData[component]
+        guard let rowData = array.first(where: { $0.key == preKey}) else {
+            return nil
+        }
+        return rowData
+    }
+    
+    func fetchValueArray(use preKey : String?,for component : Int) -> [String]? {
+        guard let rowData = fetchRowData(use: preKey, for: component) else { return nil }
+        return rowData.valueArray
     }
 
 }
@@ -251,66 +307,5 @@ extension StringPickerView : UIPickerViewDataSource,UIPickerViewDelegate {
         }
     }
     
-    func refreshLaterFor(_ row :Int, in component : Int) {
-        for com in ((component+1)..<associatedRowDataCount) {
-            let preKey = previousKeyFor(row, in: com)
-            let valueArray = fetchValueArray(use: preKey, for: com)
-            if valueArray != nil  && valueArray!.count > 0 {
-                self.selectedValue[com].value = valueArray![0]
-            }else{
-                self.selectedValue[com].value = ""
-            }
-            self.selectedValue[com].row = 0
-            self.selectedValue[com].component = com
-            reloadPicker(in: com)
-        }
-    }
-    
-    
-    
-    func reloadPicker(_ row: Int? = nil,in component: Int) {
-        self.picker.reloadComponent(component)
-        self.picker.selectRow(row ?? 0, inComponent: component, animated: true)
-    }
-    
-    func previousKeyFor(_ row : Int ,in component : Int) -> String? {
-        if component == 0 {
-            assert(associatedRowData[0].count > row, "row超出了associatedRowData[0]的个数")
-            return associatedRowData[component][row].key
-        }
-        if selectedValue.count > component-1 {
-            return selectedValue[component-1].value
-        }else{
-            return nil
-        }
-    }
-    
-    func currentTitleFor(_ row : Int,in component : Int) -> String? {
-        assert(associatedRowDataCount > component, "component应小于associatedRowData的个数")
-        let preKey = previousKeyFor(row, in: component)
-        if component == 0 {
-            return preKey
-        }
-        let valueArray = fetchValueArray(use: preKey, for: component)
-        if valueArray != nil  && valueArray!.count > row {
-            return valueArray![row]
-        }else{
-            return nil
-        }
-        print(preKey ?? "1")
-    }
-    
-    func fetchRowData(use preKey : String?,for component : Int) -> AssociatedData? {
-        let array = associatedRowData[component]
-        guard let rowData = array.first(where: { $0.key == preKey}) else {
-            return nil
-        }
-        return rowData
-    }
-    
-    func fetchValueArray(use preKey : String?,for component : Int) -> [String]? {
-        guard let rowData = fetchRowData(use: preKey, for: component) else { return nil }
-        return rowData.valueArray
-    }
-    
+//end
 }

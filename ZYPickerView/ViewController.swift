@@ -33,8 +33,16 @@ class ViewController: UIViewController {
 //            print(indexPath)
 //        }
 
+//        AddressPickerView.showAddress { (indexPath) in
+//            print(indexPath)
+//        }
         
-//        DatePickerView.show(mode: .time) { (date) in
+       
+        AddressPickerView.showAddress { (indexPath) in
+            print(indexPath)
+        }
+        
+//        DatePickerView.show(mode: .date) { (date) in
 //            print(date)
 //        }
 //        DatePickerView.show(mode: .time, minDate: minDate, maxDate: maxDate) { (date) in
@@ -58,6 +66,8 @@ class ViewController: UIViewController {
         let languageData = NSArray(contentsOfFile: path!)
         
         
+        
+        
         let associatedData: [[AssociatedData]] = [
             // 第一列数据 (key)
             [   AssociatedData(key: "交通工具"),
@@ -78,11 +88,11 @@ class ViewController: UIViewController {
                 AssociatedData(key: "角色游戏", valueArray: ["lol", "cf"])
             ]            
         ]
- StringPickerView.show(dataSource: .associatedRowData(associatedData, defaultIndexs: nil)) { (indexPath) in
-            print(indexPath)
+//     StringPickerView.show(dataSource: .associatedRowData(associatedData, defaultIndexs: nil)) { (indexPath) in
+//                print(indexPath)
+//            }
         }
-    }
-    
+//
     
 
 

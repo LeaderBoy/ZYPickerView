@@ -11,6 +11,7 @@
 		521173C21FFF79A30076F1FF /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521173C11FFF79A30076F1FF /* DatePickerView.swift */; };
 		521173C620035BEB0076F1FF /* Language1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 521173C520035BEB0076F1FF /* Language1.plist */; };
 		521173C820035F710076F1FF /* Language.plist in Resources */ = {isa = PBXBuildFile; fileRef = 521173C720035F700076F1FF /* Language.plist */; };
+		52848FAE200C4EAA00F1DAED /* AddressPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52848FAD200C4EAA00F1DAED /* AddressPickerView.swift */; };
 		52B825981FF6274500AEA830 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B825971FF6274500AEA830 /* AppDelegate.swift */; };
 		52B8259A1FF6274500AEA830 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B825991FF6274500AEA830 /* ViewController.swift */; };
 		52B8259D1FF6274500AEA830 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52B8259B1FF6274500AEA830 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 		52B825AD1FF6274600AEA830 /* ZYPickerViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B825AC1FF6274600AEA830 /* ZYPickerViewTests.swift */; };
 		52B825B81FF6274600AEA830 /* ZYPickerViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B825B71FF6274600AEA830 /* ZYPickerViewUITests.swift */; };
 		52B825C71FF6278300AEA830 /* ZYPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B825C61FF6278300AEA830 /* ZYPickerView.swift */; };
+		52C42687200C50BA00AED2E0 /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = 52C42686200C50BA00AED2E0 /* city.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,9 @@
 		521173C11FFF79A30076F1FF /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		521173C520035BEB0076F1FF /* Language1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Language1.plist; sourceTree = "<group>"; };
 		521173C720035F700076F1FF /* Language.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Language.plist; sourceTree = "<group>"; };
+		52848FAB200C4E3200F1DAED /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		52848FAC200C4E3200F1DAED /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		52848FAD200C4EAA00F1DAED /* AddressPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressPickerView.swift; sourceTree = "<group>"; };
 		52B825941FF6274500AEA830 /* ZYPickerView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZYPickerView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B825971FF6274500AEA830 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52B825991FF6274500AEA830 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +62,7 @@
 		52B825B71FF6274600AEA830 /* ZYPickerViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYPickerViewUITests.swift; sourceTree = "<group>"; };
 		52B825B91FF6274600AEA830 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		52B825C61FF6278300AEA830 /* ZYPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZYPickerView.swift; sourceTree = "<group>"; };
+		52C42686200C50BA00AED2E0 /* city.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = city.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +148,8 @@
 				52B825C61FF6278300AEA830 /* ZYPickerView.swift */,
 				521173BF1FFF1F240076F1FF /* StringPickerView.swift */,
 				521173C11FFF79A30076F1FF /* DatePickerView.swift */,
+				52848FAD200C4EAA00F1DAED /* AddressPickerView.swift */,
+				52C42686200C50BA00AED2E0 /* city.plist */,
 				521173C720035F700076F1FF /* Language.plist */,
 				521173C520035BEB0076F1FF /* Language1.plist */,
 			);
@@ -258,6 +266,7 @@
 				521173C620035BEB0076F1FF /* Language1.plist in Resources */,
 				521173C820035F710076F1FF /* Language.plist in Resources */,
 				52B825A21FF6274600AEA830 /* LaunchScreen.storyboard in Resources */,
+				52C42687200C50BA00AED2E0 /* city.plist in Resources */,
 				52B8259F1FF6274500AEA830 /* Assets.xcassets in Resources */,
 				52B8259D1FF6274500AEA830 /* Main.storyboard in Resources */,
 			);
@@ -285,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52B825C71FF6278300AEA830 /* ZYPickerView.swift in Sources */,
+				52848FAE200C4EAA00F1DAED /* AddressPickerView.swift in Sources */,
 				521173C21FFF79A30076F1FF /* DatePickerView.swift in Sources */,
 				521173C01FFF1F240076F1FF /* StringPickerView.swift in Sources */,
 				52B8259A1FF6274500AEA830 /* ViewController.swift in Sources */,
@@ -328,6 +338,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				52B8259C1FF6274500AEA830 /* Base */,
+				52848FAB200C4E3200F1DAED /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -336,6 +347,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				52B825A11FF6274600AEA830 /* Base */,
+				52848FAC200C4E3200F1DAED /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -347,6 +359,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -404,6 +417,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
