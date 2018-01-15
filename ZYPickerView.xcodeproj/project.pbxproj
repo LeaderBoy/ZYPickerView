@@ -45,8 +45,6 @@
 		521173C11FFF79A30076F1FF /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		521173C520035BEB0076F1FF /* Language1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Language1.plist; sourceTree = "<group>"; };
 		521173C720035F700076F1FF /* Language.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Language.plist; sourceTree = "<group>"; };
-		52848FAB200C4E3200F1DAED /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
-		52848FAC200C4E3200F1DAED /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		52848FAD200C4EAA00F1DAED /* AddressPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressPickerView.swift; sourceTree = "<group>"; };
 		52B825941FF6274500AEA830 /* ZYPickerView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZYPickerView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52B825971FF6274500AEA830 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -338,7 +336,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				52B8259C1FF6274500AEA830 /* Base */,
-				52848FAB200C4E3200F1DAED /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -347,7 +344,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				52B825A11FF6274600AEA830 /* Base */,
-				52848FAC200C4E3200F1DAED /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
