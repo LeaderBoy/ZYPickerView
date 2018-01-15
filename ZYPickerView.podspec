@@ -103,8 +103,7 @@ Pod::Spec.new do |s|
   #
 
   # s.resource  = "icon.png"
-  s.resources = "Resources/*.plist"
-
+  s.resources    = 'ZYPickerView/ZYPickerView/ZYPickerView.bundle'
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
 

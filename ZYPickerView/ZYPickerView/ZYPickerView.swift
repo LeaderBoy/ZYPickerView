@@ -26,7 +26,7 @@ class ZYPickerView: UIView {
     fileprivate var screenWidth : CGFloat {
         return screenFrame.width
     }
-    private var screenHeight : CGFloat {
+    fileprivate var screenHeight : CGFloat {
         return screenFrame.height
     }
     
