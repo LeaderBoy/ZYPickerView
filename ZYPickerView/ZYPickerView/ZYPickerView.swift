@@ -22,8 +22,8 @@ class ZYPickerView: UIView {
     var selectedValue : [PickerIndexPath]!
 
     let screenFrame = UIScreen.main.bounds
-    private let toolBarH    : CGFloat = 44.0
-    private var screenWidth : CGFloat {
+    fileprivate let toolBarH    : CGFloat = 44.0
+    fileprivate var screenWidth : CGFloat {
         return screenFrame.width
     }
     private var screenHeight : CGFloat {
