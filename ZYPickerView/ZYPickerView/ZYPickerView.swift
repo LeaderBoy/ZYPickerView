@@ -21,17 +21,17 @@ class ZYPickerView: UIView {
     var doneAction : DoneAction?
     var selectedValue : [PickerIndexPath]!
 
-    let screenFrame = UIScreen.main.bounds
-    fileprivate let toolBarH    : CGFloat = 44.0
-    fileprivate var screenWidth : CGFloat {
+    static let screenFrame = UIScreen.main.bounds
+    fileprivate static let toolBarH    : CGFloat = 44.0
+    fileprivate static var screenWidth : CGFloat {
         return screenFrame.width
     }
-    fileprivate var screenHeight : CGFloat {
+    fileprivate static var screenHeight : CGFloat {
         return screenFrame.height
     }
     
-    private lazy var toolBar : UIToolbar = {
-        let tool = UIToolbar(frame: CGRect(x: 0, y:0, width: screenWidth, height: toolBarH))
+    fileprivate lazy var toolBar : UIToolbar = {
+        let tool = UIToolbar(frame: CGRect(x: 0, y:0, width: ZYPickerView.screenFrame.width, height: ZYPickerView.toolBarH))
         let leftBarButtonItem = UIBarButtonItem(title: "取消", style: .plain, target: self, action: #selector(leftButtonClicked))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let rightBarButtonItem = UIBarButtonItem(title: "完成", style: .plain, target: self, action: #selector(rightButtonClicked))
@@ -71,7 +71,7 @@ class ZYPickerView: UIView {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         guard let inputView = self.inputView,let touch = touches.first else { return}
-        let inputY = screenHeight - inputView.frame.size.height - toolBarH
+        let inputY = ZYPickerView.screenFrame.height - inputView.frame.size.height - ZYPickerView.toolBarH
         let touchY = touch.location(in: self).y
         if touchY < inputY {
             self.hide()
