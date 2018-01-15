@@ -70,13 +70,14 @@ class ViewController: UIViewController {
         
         let associatedData: [[AssociatedData]] = [
             // 第一列数据 (key)
-            [   AssociatedData(key: "交通工具"),
-                AssociatedData(key: "食品"),
-                AssociatedData(key: "游戏")
+            [   AssociatedData(key: "Swift"),
+                AssociatedData(key: "OC"),
+                AssociatedData(key: "Java"),
+                AssociatedData(key: "HTML")
             ],
             // 第二列数据 (valueArray)
-            [    AssociatedData(key: "交通工具", valueArray: ["陆地", "空中", "水上"]),
-                 AssociatedData(key: "食品", valueArray: ["健康食品", "垃圾食品"]),
+            [    AssociatedData(key: "Swift", valueArray: ["Xcode"]),
+                 AssociatedData(key: "OC", valueArray: ["健康食品", "垃圾食品"]),
                  AssociatedData(key: "游戏", valueArray: ["益智游戏", "角色游戏"]),
             ],
             [   AssociatedData(key: "陆地", valueArray: ["公交车", "小轿车", "自行车","火车"]),

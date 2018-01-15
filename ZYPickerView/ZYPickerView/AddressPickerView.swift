@@ -8,16 +8,6 @@
 
 import UIKit
 
-struct Province {
-    var name : String
-}
-struct City {
-    var name : String
-}
-struct Area {
-    var name : String
-}
-
 
 class AddressPickerView: ZYPickerView {
     
@@ -51,6 +41,7 @@ class AddressPickerView: ZYPickerView {
         picker.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         return picker
     }()
+    
     override var inputView: UIView? {
         get {
             return self.picker
@@ -70,16 +61,21 @@ class AddressPickerView: ZYPickerView {
     }
     
     func loadPlist() {
-        let path = Bundle.main.path(forResource: "city", ofType: "plist")
+        let bundle = Bundle(for: ZYPickerView.classForCoder())
+        let resourceBundle = Bundle(path: bundle.path(forResource: "ZYPickerView", ofType: "bundle")!)!
+        
+        let path = resourceBundle.path(forResource: "city", ofType: "plist")
+            
         let array = NSArray(contentsOfFile: path!) as! Array<Dictionary<String,Any>>
         dataSource = array
     }
     
+    //MARK: Fetch
     func fetch(provinceIndex : Int = 0,cityIndex : Int = 0,areaIndex : Int = 0) {
         fetchCity(use: provinceIndex)
         fetchArea(use: provinceIndex, cityIndex: cityIndex)
     }
-    
+    //MARK: Province
     func fetchProvince() {
         var temp = [String]()
         for provinceD in dataSource {
@@ -89,7 +85,7 @@ class AddressPickerView: ZYPickerView {
         }
         provinceArray = temp
     }
-    
+    //MARK: City
     func fetchCity(use provinceIndex : Int) {
         let cityDic = dataSource[provinceIndex][provinceArray[provinceIndex]] as! Dictionary<String,Dictionary<String,Any>>
         var temp = [String]()
@@ -100,19 +96,13 @@ class AddressPickerView: ZYPickerView {
         }
         cityArray = temp
     }
-    
+    //MARK: Area
     func fetchArea(use provinceIndex: Int,cityIndex: Int) {
         let cityDic = dataSource[provinceIndex][provinceArray[provinceIndex]] as! Dictionary<String,Dictionary<String,Any>>
         let areaDic = Array(cityDic.values)[cityIndex]
         let array = areaDic[cityArray[cityIndex]]
         areaArray = array as! [String]
     }
-    
-    func reloadPicker(_ row: Int,in component: Int) {
-        self.picker.reloadComponent(component)
-        self.picker.selectRow(row, inComponent: component, animated: true)
-    }
-    
     
 //end
 }
@@ -153,7 +143,8 @@ extension AddressPickerView : UIPickerViewDataSource,UIPickerViewDelegate {
         
         if component == 0 {
             selectedProvince = row
-            
+            selectedCity = 0
+            selectedArea = 0
             fetchCity(use: selectedProvince)
             fetchArea(use: selectedProvince, cityIndex: 0)
             
@@ -164,15 +155,13 @@ extension AddressPickerView : UIPickerViewDataSource,UIPickerViewDelegate {
             
         }else if component == 1 {
             selectedCity = row
+            selectedArea = 0
             fetchArea(use: selectedProvince, cityIndex: selectedCity)
             picker.reloadComponent(2)
             picker.selectRow(0, inComponent: 2, animated: true)
         }else{
             selectedArea = row
         }
-//        selectedValue[component].component = component
-//        selectedValue[component].row = row
-//        
     }
     
 //end
