@@ -84,14 +84,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		528D5FF7200CA24E001DCDED /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				528D5FF4200C9549001DCDED /* ZYPickerView.bundle */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		52B8258B1FF6274500AEA830 = {
 			isa = PBXGroup;
 			children = (
@@ -151,7 +143,7 @@
 				521173BF1FFF1F240076F1FF /* StringPickerView.swift */,
 				521173C11FFF79A30076F1FF /* DatePickerView.swift */,
 				52848FAD200C4EAA00F1DAED /* AddressPickerView.swift */,
-				528D5FF7200CA24E001DCDED /* Resources */,
+				528D5FF4200C9549001DCDED /* ZYPickerView.bundle */,
 			);
 			path = ZYPickerView;
 			sourceTree = "<group>";
