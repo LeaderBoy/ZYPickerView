@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		521173C01FFF1F240076F1FF /* StringPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521173BF1FFF1F240076F1FF /* StringPickerView.swift */; };
 		521173C21FFF79A30076F1FF /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521173C11FFF79A30076F1FF /* DatePickerView.swift */; };
-		521173C820035F710076F1FF /* Language.plist in Resources */ = {isa = PBXBuildFile; fileRef = 521173C720035F700076F1FF /* Language.plist */; };
 		52848FAE200C4EAA00F1DAED /* AddressPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52848FAD200C4EAA00F1DAED /* AddressPickerView.swift */; };
 		528D5FF5200C9549001DCDED /* ZYPickerView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 528D5FF4200C9549001DCDED /* ZYPickerView.bundle */; };
 		52B825981FF6274500AEA830 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B825971FF6274500AEA830 /* AppDelegate.swift */; };
@@ -42,7 +41,6 @@
 /* Begin PBXFileReference section */
 		521173BF1FFF1F240076F1FF /* StringPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringPickerView.swift; sourceTree = "<group>"; };
 		521173C11FFF79A30076F1FF /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
-		521173C720035F700076F1FF /* Language.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Language.plist; sourceTree = "<group>"; };
 		52848FAD200C4EAA00F1DAED /* AddressPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressPickerView.swift; sourceTree = "<group>"; };
 		528D5FF4200C9549001DCDED /* ZYPickerView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ZYPickerView.bundle; sourceTree = "<group>"; };
 		52B825941FF6274500AEA830 /* ZYPickerView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZYPickerView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,7 +117,6 @@
 			children = (
 				52B825971FF6274500AEA830 /* AppDelegate.swift */,
 				52B825991FF6274500AEA830 /* ViewController.swift */,
-				521173C720035F700076F1FF /* Language.plist */,
 				52B825C51FF6276800AEA830 /* ZYPickerView */,
 				52B8259B1FF6274500AEA830 /* Main.storyboard */,
 				52B8259E1FF6274500AEA830 /* Assets.xcassets */,
@@ -266,7 +263,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				521173C820035F710076F1FF /* Language.plist in Resources */,
 				52B825A21FF6274600AEA830 /* LaunchScreen.storyboard in Resources */,
 				52B8259F1FF6274500AEA830 /* Assets.xcassets in Resources */,
 				52B8259D1FF6274500AEA830 /* Main.storyboard in Resources */,

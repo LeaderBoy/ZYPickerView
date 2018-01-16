@@ -17,7 +17,83 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qC2-cf-ZJk">
+                                <rect key="frame" x="171.5" y="50" width="31" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Zml-7Y-vSr"/>
+                                </constraints>
+                                <state key="normal" title="单列"/>
+                                <connections>
+                                    <action selector="singleShow:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FKr-w9-ZTX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rdb-fC-pxo">
+                                <rect key="frame" x="171.5" y="100" width="31" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="PWi-ts-x6S"/>
+                                </constraints>
+                                <state key="normal" title="多列"/>
+                                <connections>
+                                    <action selector="multiShow:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bem-Wt-Lik"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdo-QN-gYZ">
+                                <rect key="frame" x="156" y="150" width="62" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="rbo-7o-xwG"/>
+                                </constraints>
+                                <state key="normal" title="两列关联"/>
+                                <connections>
+                                    <action selector="doubleAssociatedShow:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ySX-0f-meP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r5a-Xc-XtV">
+                                <rect key="frame" x="156" y="200" width="62" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="kB1-8E-0ux"/>
+                                </constraints>
+                                <state key="normal" title="三列关联"/>
+                                <connections>
+                                    <action selector="thirdAssociatedShow:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TuV-zR-b9i"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P4g-4U-y0h">
+                                <rect key="frame" x="171.5" y="250" width="31" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Lbv-id-pX3"/>
+                                </constraints>
+                                <state key="normal" title="日期"/>
+                                <connections>
+                                    <action selector="dateShow:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Hjm-wB-sWN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B6d-4c-0vj">
+                                <rect key="frame" x="171" y="300" width="31" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="wCc-gM-pVQ"/>
+                                </constraints>
+                                <state key="normal" title="地址"/>
+                                <connections>
+                                    <action selector="addressShow:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DRb-xf-p0Q"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qC2-cf-ZJk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="0Di-CD-d8z"/>
+                            <constraint firstItem="r5a-Xc-XtV" firstAttribute="centerX" secondItem="qdo-QN-gYZ" secondAttribute="centerX" id="2UD-LH-9Vj"/>
+                            <constraint firstItem="B6d-4c-0vj" firstAttribute="top" secondItem="P4g-4U-y0h" secondAttribute="bottom" constant="20" id="86b-di-Cxt"/>
+                            <constraint firstItem="qdo-QN-gYZ" firstAttribute="top" secondItem="Rdb-fC-pxo" secondAttribute="bottom" constant="20" id="G0f-qH-b5B"/>
+                            <constraint firstItem="r5a-Xc-XtV" firstAttribute="top" secondItem="qdo-QN-gYZ" secondAttribute="bottom" constant="20" id="Kew-Kg-r6e"/>
+                            <constraint firstItem="Rdb-fC-pxo" firstAttribute="centerX" secondItem="qC2-cf-ZJk" secondAttribute="centerX" id="KhW-lB-V3G"/>
+                            <constraint firstItem="qC2-cf-ZJk" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="NGW-Wz-oUu"/>
+                            <constraint firstItem="qdo-QN-gYZ" firstAttribute="centerX" secondItem="Rdb-fC-pxo" secondAttribute="centerX" id="f5L-ef-Bmo"/>
+                            <constraint firstItem="Rdb-fC-pxo" firstAttribute="top" secondItem="qC2-cf-ZJk" secondAttribute="bottom" constant="20" id="j2n-EO-p44"/>
+                            <constraint firstItem="P4g-4U-y0h" firstAttribute="centerX" secondItem="r5a-Xc-XtV" secondAttribute="centerX" id="p1c-Ba-PBi"/>
+                            <constraint firstItem="P4g-4U-y0h" firstAttribute="top" secondItem="r5a-Xc-XtV" secondAttribute="bottom" constant="20" id="xtB-Li-Qwb"/>
+                            <constraint firstItem="B6d-4c-0vj" firstAttribute="centerX" secondItem="P4g-4U-y0h" secondAttribute="centerX" id="yHZ-Ya-0KD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>

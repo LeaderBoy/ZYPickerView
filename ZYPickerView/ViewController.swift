@@ -13,92 +13,81 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    
+    @IBAction func singleShow(_ sender: UIButton) {
+        StringPickerView.show(dataSource: .singleRowData(["男","女","其他"], defaultIndex: nil)) { (indexPath) in
+            print(indexPath)
+        }
+    }
+    
+    @IBAction func multiShow(_ sender: UIButton) {
+        StringPickerView.show(dataSource: .multiRowData([["1","2","3"],["4","5","6"],["7","8","9"]], defaultIndexs:nil)) { (indexPath) in
+            print(indexPath)
+        }
+    }
+    
+    @IBAction func doubleAssociatedShow(_ sender: UIButton) {
+        let associatedData: [[AssociatedData]] = [
+            // 第一列数据 (key)
+            [   AssociatedData(key: "swift"),
+                AssociatedData(key: "objectivec"),
+                AssociatedData(key: "html"),
+                AssociatedData(key: "java")
+            ],
+            // 第二列数据 (valueArray)
+            [    AssociatedData(key: "swift", valueArray: ["xcode"]),
+                 AssociatedData(key: "objectivec", valueArray: ["xcode"]),
+                 AssociatedData(key: "html", valueArray: ["vs", "monokai-sublime","foundation","dark","atelier-dune-dark","googlecode","color-brewer","atelier-dune-light"]),
+                 
+                 AssociatedData(key: "java", valueArray: ["androidstudio", "vs","pojoaque","googlecode"])
+            ]
+        ]
         
-        
-//        StringPickerView.show(dataSource: .singleRowData(["7","8","9"], defaultIndex: nil)) { (indexPath) in
-//            print(indexPath)
-//        }
-        
-        
-//        StringPickerView.show(dataSource: .singleRowData(["7","8","9"], defaultIndex: 2)) { (indexPath) in
-//            print(indexPath)
-//        }
-        
-//        StringPickerView.show(dataSource: .multiRowData([["1","2","3"],["4","5","6"],["7","8","9"]], defaultIndexs:nil)) { (indexPath) in
-//            print(indexPath)
-//        }
-        
-//        StringPickerView.show(dataSource: .multiRowData([["1","2","3"],["4","5","6"],["7","8","9"]], defaultIndexs: [0,1,2])) { (indexPath) in
-//            print(indexPath)
-//        }
-
-//        AddressPickerView.showAddress { (indexPath) in
-//            print(indexPath)
-//        }
-        
-       
+        StringPickerView.show(dataSource: .associatedRowData(associatedData, defaultIndexs: nil)) { (indexPath) in
+            print(indexPath)
+        }
+    //end
+    }
+    
+    @IBAction func thirdAssociatedShow(_ sender: UIButton) {
+        let associatedData: [[AssociatedData]] = [
+            // 第一列数据 (key)
+            [   AssociatedData(key: "宇宙"),
+                AssociatedData(key: "交通工具")
+            ],
+            // 第二列数据 (valueArray)
+            [    AssociatedData(key: "宇宙", valueArray: ["太阳系","银河系"]),
+                 AssociatedData(key: "交通工具", valueArray: ["海", "陆","空"])
+            ],
+            [   AssociatedData(key: "太阳系", valueArray: ["地球", "月球", "太阳","火星"]),
+                AssociatedData(key: "银河系", valueArray: ["半人马座α星","巴纳德星","伍尔夫359星","勃兰得2147星"]),
+                AssociatedData(key: "海", valueArray: ["轮船","潜艇"]),
+                AssociatedData(key: "陆", valueArray: ["汽车", "小黄车","膜拜","火车"]),
+                AssociatedData(key: "空", valueArray: ["飞机", "热气球"])
+            ]
+        ]
+        StringPickerView.show(dataSource: .associatedRowData(associatedData, defaultIndexs: nil)) { (indexPath) in
+            print(indexPath)
+        }
+    //end
+    }
+    
+    @IBAction func dateShow(_ sender: UIButton) {
+        DatePickerView.show(mode: .date) { (date) in
+            print(date)
+        }
+    //end
+    }
+    
+    @IBAction func addressShow(_ sender: UIButton) {
         AddressPickerView.showAddress { (indexPath) in
             print(indexPath)
         }
-        
-//        DatePickerView.show(mode: .date) { (date) in
-//            print(date)
-//        }
-//        DatePickerView.show(mode: .time, minDate: minDate, maxDate: maxDate) { (date) in
-//            print(date)
-//        }
-        /*
-         ,
-         // 第三列数据 (valueArray)
-         [   AssociatedData(key: "陆地", valueArray: ["公交车", "小轿车", "自行车","火车"]),
-         AssociatedData(key: "空中", valueArray: ["飞机"]),
-         AssociatedData(key: "水上", valueArray: ["轮船"]),
-         AssociatedData(key: "健康食品", valueArray: ["蔬菜", "水果"]),
-         AssociatedData(key: "垃圾食品", valueArray: ["辣条", "不健康小吃"]),
-         AssociatedData(key: "益智游戏", valueArray: ["消消乐", "消灭星星"]),
-         AssociatedData(key: "角色游戏", valueArray: ["lol", "cf"])
-         ]
-         
-         */
-        
-        let path = Bundle.main.path(forResource: "Language", ofType: "plist")
-        let languageData = NSArray(contentsOfFile: path!)
-        
-        
-        
-        
-        let associatedData: [[AssociatedData]] = [
-            // 第一列数据 (key)
-            [   AssociatedData(key: "Swift"),
-                AssociatedData(key: "OC"),
-                AssociatedData(key: "Java"),
-                AssociatedData(key: "HTML")
-            ],
-            // 第二列数据 (valueArray)
-            [    AssociatedData(key: "Swift", valueArray: ["Xcode"]),
-                 AssociatedData(key: "OC", valueArray: ["健康食品", "垃圾食品"]),
-                 AssociatedData(key: "游戏", valueArray: ["益智游戏", "角色游戏"]),
-            ],
-            [   AssociatedData(key: "陆地", valueArray: ["公交车", "小轿车", "自行车","火车"]),
-                AssociatedData(key: "空中", valueArray: ["飞机"]),
-                AssociatedData(key: "水上", valueArray: ["轮船"]),
-                AssociatedData(key: "健康食品", valueArray: ["蔬菜", "水果"]),
-                AssociatedData(key: "垃圾食品", valueArray: ["辣条", "不健康小吃"]),
-                AssociatedData(key: "益智游戏", valueArray: ["消消乐", "消灭星星"]),
-                AssociatedData(key: "角色游戏", valueArray: ["lol", "cf"])
-            ]            
-        ]
-//     StringPickerView.show(dataSource: .associatedRowData(associatedData, defaultIndexs: nil)) { (indexPath) in
-//                print(indexPath)
-//            }
-        }
-//
+    //end
+    }
     
 
 
-    
-    
-    
+//end
 }
 

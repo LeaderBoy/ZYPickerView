@@ -20,18 +20,18 @@ class ZYPickerView: UIView {
     
     var doneAction : DoneAction?
     var selectedValue : [PickerIndexPath]!
-
+    
     static let screenFrame = UIScreen.main.bounds
     fileprivate static let toolBarH    : CGFloat = 44.0
     fileprivate static var screenWidth : CGFloat {
         return screenFrame.width
     }
     fileprivate static var screenHeight : CGFloat {
-        return screenFrame.height
+        return ZYPickerView.screenFrame.height
     }
     
     fileprivate lazy var toolBar : UIToolbar = {
-        let tool = UIToolbar(frame: CGRect(x: 0, y:0, width: ZYPickerView.screenFrame.width, height: ZYPickerView.toolBarH))
+        let tool = UIToolbar(frame: CGRect(x: 0, y:0, width: ZYPickerView.screenWidth, height: ZYPickerView.toolBarH))
         let leftBarButtonItem = UIBarButtonItem(title: "取消", style: .plain, target: self, action: #selector(leftButtonClicked))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let rightBarButtonItem = UIBarButtonItem(title: "完成", style: .plain, target: self, action: #selector(rightButtonClicked))
@@ -63,7 +63,7 @@ class ZYPickerView: UIView {
             return self.toolBar
         }
     }
-
+    
     override var canBecomeFirstResponder: Bool {
         return true
     }
