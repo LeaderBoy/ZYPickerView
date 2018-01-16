@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "ZYPickerView"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "单列选择器,多列选择器,两列关联选择器,三列关联选择器...,时间选择选择器,地址选择选择器"
 
   # This description is used to generate tags and improve search results.
