@@ -9,7 +9,7 @@
 import UIKit
 
 
-class AddressPickerView: ZYPickerView {
+public class AddressPickerView: ZYPickerView {
     
     var dataSource : Array<Dictionary<String,Any>>! {
         didSet {
@@ -24,7 +24,7 @@ class AddressPickerView: ZYPickerView {
     var selectedCity : Int = 0
     var selectedArea : Int = 0
     //MARK:Show
-    static func showAddress(doneAction : @escaping DoneAction) {
+    public static func showAddress(doneAction : @escaping DoneAction) {
         let addressPickerView = AddressPickerView(frame: UIScreen.main.bounds)
         
         addressPickerView.doneAction = doneAction
@@ -42,7 +42,7 @@ class AddressPickerView: ZYPickerView {
         return picker
     }()
     
-    override var inputView: UIView? {
+    override public var inputView: UIView? {
         get {
             return self.picker
         }
@@ -65,7 +65,7 @@ class AddressPickerView: ZYPickerView {
         let resourceBundle = Bundle(path: bundle.path(forResource: "ZYPickerView", ofType: "bundle")!)!
         
         let path = resourceBundle.path(forResource: "city", ofType: "plist")
-            
+        
         let array = NSArray(contentsOfFile: path!) as! Array<Dictionary<String,Any>>
         dataSource = array
     }
@@ -104,16 +104,16 @@ class AddressPickerView: ZYPickerView {
         areaArray = array as! [String]
     }
     
-//end
+    //end
 }
 
 //MARK: UIPickerViewDataSource,UIPickerViewDelegate
 extension AddressPickerView : UIPickerViewDataSource,UIPickerViewDelegate {
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 3
     }
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch component {
         case 0:
             return provinceArray.count
@@ -126,7 +126,7 @@ extension AddressPickerView : UIPickerViewDataSource,UIPickerViewDelegate {
         }
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch component {
         case 0:
             return provinceArray[row]
@@ -139,7 +139,7 @@ extension AddressPickerView : UIPickerViewDataSource,UIPickerViewDelegate {
         }
     }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         if component == 0 {
             selectedProvince = row
@@ -164,7 +164,7 @@ extension AddressPickerView : UIPickerViewDataSource,UIPickerViewDelegate {
         }
     }
     
-//end
+    //end
 }
 
 

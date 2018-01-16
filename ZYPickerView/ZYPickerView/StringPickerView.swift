@@ -9,7 +9,7 @@
 import UIKit
 
 /// 关联的数据类型
-struct AssociatedData {
+public struct AssociatedData {
     var key: String
     var valueArray: [String]?
     init (key: String, valueArray: [String]? = nil) {
@@ -18,10 +18,10 @@ struct AssociatedData {
     }
 }
 
-class StringPickerView: ZYPickerView {
-    typealias AssociatedRowDataType = [[AssociatedData]]
-
-    enum PickerDataSourceType {
+public class StringPickerView: ZYPickerView {
+    public typealias AssociatedRowDataType = [[AssociatedData]]
+    
+    public enum PickerDataSourceType {
         case singleRowData(_ : [String],defaultIndex: Int?)
         case multiRowData(_ : [[String]],defaultIndexs: [Int]?)
         case associatedRowData(_ : AssociatedRowDataType,defaultIndexs: [Int]?)
@@ -43,7 +43,7 @@ class StringPickerView: ZYPickerView {
             self.picker.reloadAllComponents()
         }
     }
-
+    
     var associatedRowData : AssociatedRowDataType! {
         didSet {
             isAssociatedRowData = true
@@ -80,13 +80,13 @@ class StringPickerView: ZYPickerView {
         return picker
     }()
     
-    override var inputView: UIView? {
+    override public var inputView: UIView? {
         get {
             return self.picker
         }
     }
     //MARK: Show
-    static func show(dataSource : PickerDataSourceType,doneAction : @escaping DoneAction) {
+    public static func show(dataSource : PickerDataSourceType,doneAction : @escaping DoneAction) {
         let frame = UIScreen.main.bounds
         switch dataSource {
         case .singleRowData(let single,let index):
@@ -99,7 +99,7 @@ class StringPickerView: ZYPickerView {
             let stringPickerView = StringPickerView(frame: frame)
             stringPickerView.show(associatedRowData: associated, default: indexs, doneAction: doneAction)
         }
-
+        
     }
     //MARK: 单列
     func show(singleRowData:[String],default index : Int? = nil,doneAction : @escaping DoneAction) {
@@ -143,15 +143,15 @@ class StringPickerView: ZYPickerView {
         assert(!associatedRowData.isEmpty, "数组为空")
         let hasDefaultIndex : Bool = index != nil
         self.associatedRowData = associatedRowData
-
+        
         if hasDefaultIndex {
             assert(associatedRowDataCount == index!.count,"默认的index与associatedRowData数组的总个数不一致")
         }
         self.doneAction = doneAction
         
-                
+        
         if hasDefaultIndex {
-           _ = index!.enumerated().map({ (component,row) -> PickerIndexPath in
+            _ = index!.enumerated().map({ (component,row) -> PickerIndexPath in
                 let title = currentTitleFor(row, in: component)
                 self.selectedValue[component].component = component
                 self.selectedValue[component].row = row
@@ -170,7 +170,7 @@ class StringPickerView: ZYPickerView {
     override func rightButtonClicked() {
         self.hide()
         if doneAction != nil {
-            doneAction!(selectedValue)            
+            doneAction!(selectedValue)
         }
     }
     
@@ -233,12 +233,12 @@ class StringPickerView: ZYPickerView {
         guard let rowData = fetchRowData(use: preKey, for: component) else { return nil }
         return rowData.valueArray
     }
-
+    
 }
 //MARK: UIPickerViewDataSource,UIPickerViewDelegate
 extension StringPickerView : UIPickerViewDataSource,UIPickerViewDelegate {
     
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
         if isSingleRowData {
             return 1
         }else if isMultiRowData {
@@ -248,7 +248,7 @@ extension StringPickerView : UIPickerViewDataSource,UIPickerViewDelegate {
         }
         return 0
     }
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if isSingleRowData {
             return singleRowData.count
         }else if isMultiRowData{
@@ -271,7 +271,7 @@ extension StringPickerView : UIPickerViewDataSource,UIPickerViewDelegate {
         return 0
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if isSingleRowData {
             if singleRowData.count > row {
                 return singleRowData[row]
@@ -291,7 +291,7 @@ extension StringPickerView : UIPickerViewDataSource,UIPickerViewDelegate {
         return nil
     }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedValue[component].component = component
         selectedValue[component].row = row
         
@@ -307,5 +307,6 @@ extension StringPickerView : UIPickerViewDataSource,UIPickerViewDelegate {
         }
     }
     
-//end
+    //end
 }
+

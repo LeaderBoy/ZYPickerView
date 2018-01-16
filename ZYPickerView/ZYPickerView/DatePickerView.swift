@@ -8,8 +8,8 @@
 
 import UIKit
 
-class DatePickerView: ZYPickerView {
-    typealias DateDoneAction = (Date) -> Void
+public class DatePickerView: ZYPickerView {
+    public typealias DateDoneAction = (Date) -> Void
     
     var dateDoneAction : DateDoneAction!
     private lazy var picker : UIDatePicker = {
@@ -18,12 +18,8 @@ class DatePickerView: ZYPickerView {
         return picker
     }()
     
-    convenience init(frame: CGRect,mode:UIDatePickerMode,minDate:Date?,maxDate:Date?,doneAction : DateDoneAction) {
-        self.init(frame: frame)
-    }
-    
-    static func show(mode:UIDatePickerMode,minDate:Date? = nil,maxDate:Date? = nil,doneAction : @escaping DateDoneAction) {
-        let pickerView = DatePickerView(frame: UIScreen.main.bounds, mode: mode, minDate: minDate, maxDate: maxDate, doneAction: doneAction)
+    public static func show(mode:UIDatePickerMode,minDate:Date? = nil,maxDate:Date? = nil,doneAction : @escaping DateDoneAction) {
+        let pickerView = DatePickerView(frame: UIScreen.main.bounds)
         pickerView.picker.minimumDate = minDate
         pickerView.picker.maximumDate = maxDate
         pickerView.picker.datePickerMode = mode
@@ -31,7 +27,7 @@ class DatePickerView: ZYPickerView {
         pickerView.show()
     }
     
-    override var inputView: UIView? {
+    override public var inputView: UIView? {
         get {
             return self.picker
         }

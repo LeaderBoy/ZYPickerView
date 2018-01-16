@@ -13,7 +13,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    
     @IBAction func singleShow(_ sender: UIButton) {
         StringPickerView.show(dataSource: .singleRowData(["男","女","其他"], defaultIndex: nil)) { (indexPath) in
             print(indexPath)

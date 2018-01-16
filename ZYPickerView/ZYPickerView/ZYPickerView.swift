@@ -9,10 +9,10 @@
 import UIKit
 
 
-class ZYPickerView: UIView {
-    typealias DoneAction = ([PickerIndexPath]) -> Void
+public class ZYPickerView: UIView {
+    public typealias DoneAction = ([PickerIndexPath]) -> Void
     
-    struct PickerIndexPath {
+    public struct PickerIndexPath {
         var component : Int
         var row : Int
         var value : String
@@ -45,7 +45,7 @@ class ZYPickerView: UIView {
         self.show()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -58,17 +58,17 @@ class ZYPickerView: UIView {
         
     }
     
-    override var inputAccessoryView: UIView! {
+    override public var inputAccessoryView: UIView! {
         get {
             return self.toolBar
         }
     }
     
-    override var canBecomeFirstResponder: Bool {
+    override public var canBecomeFirstResponder: Bool {
         return true
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override  public func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         guard let inputView = self.inputView,let touch = touches.first else { return}
         let inputY = ZYPickerView.screenFrame.height - inputView.frame.size.height - ZYPickerView.toolBarH
