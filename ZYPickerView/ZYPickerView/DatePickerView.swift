@@ -18,7 +18,7 @@ public class DatePickerView: ZYPickerView {
         return picker
     }()
     
-    public static func show(mode:UIDatePickerMode,minDate:Date? = nil,maxDate:Date? = nil,doneAction : @escaping DateDoneAction) {
+    public static func show(mode:UIDatePicker.Mode,minDate:Date? = nil,maxDate:Date? = nil,doneAction : @escaping DateDoneAction) {
         let pickerView = DatePickerView(frame: UIScreen.main.bounds)
         pickerView.picker.minimumDate = minDate
         pickerView.picker.maximumDate = maxDate

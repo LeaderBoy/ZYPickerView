@@ -12,7 +12,7 @@ import UIKit
 public struct AssociatedData {
     var key: String
     var valueArray: [String]?
-    init (key: String, valueArray: [String]? = nil) {
+    public init (key: String, valueArray: [String]? = nil) {
         self.key = key
         self.valueArray = valueArray
     }
